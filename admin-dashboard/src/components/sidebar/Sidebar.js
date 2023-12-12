@@ -21,7 +21,6 @@ export default function Sidebar() {
                     React Admin
                 </span>
             </div>
-            <hr />
             <div className='center'>
                 <ul>
                     <p className='title'>MAIN</p>
