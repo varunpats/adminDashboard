@@ -32,6 +32,7 @@ export default function Datatable() {
             </div>
 
             <DataGrid
+                className='datagrid'
                 rows={userRows}
                 columns={userColumns.concat(actionColumn)}
                 initialState={{

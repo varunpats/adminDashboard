@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ChatIcon from '@mui/icons-material/Chat';
 import ViewListIcon from '@mui/icons-material/ViewList';
+import { darkModeContext } from '../../context/darkModeContext';
 
 export default function Navbar() {
+  const { dispatch } = useContext(darkModeContext);
+
   return (
     <div className='navbar'>
       <div className='wrapper'>
@@ -22,7 +26,8 @@ export default function Navbar() {
             English
           </div>
           <div className='item'>
-            <DarkModeIcon className='icon' />
+            {!darkModeContext._currentValue.darkMode && <DarkModeIcon className='icon' onClick={() => dispatch({type: 'TOGGLE'})} />}
+            {darkModeContext._currentValue.darkMode && <WbSunnyIcon className='icon' onClick={() => dispatch({type: 'TOGGLE'})} />}
           </div>
           <div className='item'>
             <FullscreenExitIcon className='icon' />

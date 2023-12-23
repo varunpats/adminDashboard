@@ -36,7 +36,7 @@ export default function New({ inputs, title }) {
                                     <input type={input.type} placeholder={input.placeholder} />
                                 </div>
                             })}
-                            <button>Send</button>
+                            <button className='sendButton'>Send</button>
                         </form>
                     </div>
                 </div>
